@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" data-ng-app="myApp">
+<head>
+<meta charset="utf-8">
+
+<title>angular</title>
+<meta name="description" content="">
+<meta name="author" content="java">
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+
+<script type="text/javascript" src="cordova.js"></script>
+
+<script type="text/javascript">
+	var app = angular.module("myApp", []);
+	
+	app.controller("mainController",function($scope){
+		$scope.ready = "device loading...";
+		
+		$(document).on("deviceready",function(){
+			$scope.ready = "device ready...";
+			$scope.$apply();
+		});
+		
+		$scope.size = "400x400";
+		
+	});
+</script>
+
+</head>
+
+<body class="container" data-ng-controller="mainController">
+  <div class="panel">
+    <header>
+      <h1>{{ready}}</h1>
+    </header>
+    <div class="panel-body">
+    	<button data-ng-click="leftClick" class="btn btn-success">left</button>
+    	<button data-ng-click="rightClick" class="btn btn-info">right</button>
+    	<hr>
+   		<img class="img-responsive"
+   			alt="size"
+   			data-ng-src="http://www.placehold.it/{{size}}">
+    </div>
+    <footer class="panel-footer">
+     <p>&copy; Copyright  by java</p>
+    </footer>
+  </div>
+</body>
+</html>

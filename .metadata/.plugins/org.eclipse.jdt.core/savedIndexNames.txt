@@ -1,0 +1,4 @@
+INDEX VERSION 1.127+D:\03_Src\cordova\.metadata\.plugins\org.eclipse.jdt.core
+2043120840.index
+475098746.index
+1814762527.index
